@@ -1,0 +1,83 @@
+﻿@model List<ListaDeCadastrosModel>
+
+<table class="table" id="TabelaListaDeCadastrosDoUsuario">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Data de Nascimento</th>
+            <th scope="col">Setor</th>
+            <th scope="col">Cargo</th>
+
+            <th scope="col">DT 1ªDose</th>
+            <th scope="col">DT 2ªDose</th>
+            <th scope="col">DT 3ªDose</th>
+            <th scope="col">DT Reforço</th>
+
+            <th scope="col">DT Exame</th>
+            <th scope="col">Resultado</th>
+
+            <th scope="col">DT 1ªDose</th>
+            <th scope="col">DT 2ªDose</th>
+            <th scope="col">DT 3ªDose</th>
+            <th scope="col">DT Reforço</th>
+
+            <th scope="col">DT 1ªDose</th>
+            <th scope="col">DT 2ªDose</th>
+
+            <th scope="col">DT 1ªDose</th>
+            <th scope="col">DT 2ªDose</th>
+            <th scope="col">DT 3ªDose</th>
+            <th scope="col">DT 1ªReforço</th>
+            <th scope="col">DT 2ªReforço</th>
+
+            <th scope="col">DT Dose Única</th>
+            <th scope="col">DT Dose Anual</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @if (Model != null && Model.Any())
+        {
+            foreach (ListaDeCadastrosModel listaDeCadastrosModel in Model)
+            {
+                <tr>
+                    <th scope="row">@listaDeCadastrosModel.Id</th>
+                    <td>@listaDeCadastrosModel.NumMatricula</td>
+                    <td>@listaDeCadastrosModel.Nome</td>
+                    <td>@listaDeCadastrosModel.DataNascimento</td>
+                    <td>@listaDeCadastrosModel.Setor</td>
+                    <td>@listaDeCadastrosModel.Cargo</td>
+
+                    <td>@listaDeCadastrosModel.DataDose1HepatiteB</td>
+                    <td>@listaDeCadastrosModel.DataDose2HepatiteB</td>
+                    <td>@listaDeCadastrosModel.DataDose3HepatiteB</td>
+                    <td>@listaDeCadastrosModel.DataDoseReforcoHepatiteB</td>
+
+                    <td>@listaDeCadastrosModel.DataExameAntiHBS</td>
+                    <td>@listaDeCadastrosModel.ResultadoExameAntiHBS</td>
+
+                    <td>@listaDeCadastrosModel.DataDose1DifteriaTetano</td>
+                    <td>@listaDeCadastrosModel.DataDose2DifteriaTetano</td>
+                    <td>@listaDeCadastrosModel.DataDose3DifteriaTetano</td>
+                    <td>@listaDeCadastrosModel.DataDoseReforcoDifteriaTetano</td>
+
+                    <td>@listaDeCadastrosModel.DataDose1TripliceViral</td>
+                    <td>@listaDeCadastrosModel.DataDose2TripliceViral</td>
+
+                    <td>@listaDeCadastrosModel.DataDose1Covid</td>
+                    <td>@listaDeCadastrosModel.DataDose2Covid</td>
+                    <td>@listaDeCadastrosModel.DataDose3Covid</td>
+                    <td>@listaDeCadastrosModel.DataDoseReforco1Covid</td>
+                    <td>@listaDeCadastrosModel.DataDoseReforco2Covid</td>
+
+                    <td>@listaDeCadastrosModel.DataDoseUnicaFebreAmarela</td>
+
+                    <td>@listaDeCadastrosModel.DataDoseAnualInfluenza</td>
+                </tr>
+            }
+        } else {
+            <tr class="odd"><td valign="top" colspan="6">Nenhum usuário encontrado!</td></tr>
+        }
+    </tbody>
+</table>

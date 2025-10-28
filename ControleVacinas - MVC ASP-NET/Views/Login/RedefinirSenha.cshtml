@@ -1,0 +1,45 @@
+﻿@model RedefinirSenhaModel
+@{
+    Layout = "_layoutDeslogado";
+    ViewData["Title"] = "Redefir Senha";
+}
+
+<div class="Text-center">
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div id="alert-box" class="alert alert-danger custom-alert" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+</div>
+
+<div class="titulo-redefinir-senha-container">
+     <div>Redefinir senha</div>
+</div>
+
+<div class="redefinir-senha-container">
+
+    <div>Para redefinir sua senha, por favor, faça um chamado para a GETIN.</div>
+
+    <form asp-controller="Login" asp-action="EnviarLinkParaRedefinirSenha" method="post">
+
+@*         <div class="mb-3">
+            <label for="login">Login</label>
+            <input type="text" asp-for="Login" class="form-control" id="login" placeholder="Digite seu login">
+            @Html.ValidationMessageFor(x => x.Login)
+        </div>
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="text" asp-for="Email" class="form-control" id="email" placeholder="Digite seu email">
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Redefinir senha</button>
+ *@
+
+        <a class="btn btn-secondary btn-block" asp-controller="Login" asp-action="Index" role="button">Voltar</a>
+    </form>
+</div>

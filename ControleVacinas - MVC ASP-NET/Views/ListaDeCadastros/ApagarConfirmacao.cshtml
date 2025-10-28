@@ -1,0 +1,66 @@
+﻿@model ListaDeCadastrosModel
+@{
+    ViewData["Title"] = "Confirmar exclusão";
+}
+
+<div class="titulo-apagar-confirmacao-container">
+    <div>APAGAR COFIRMAÇÃO</div>
+</div>
+
+<div class="editar-apagar-confirmacao-container">
+    <table style="border-collapse: collapse; width: 100%; table-layout: fixed;">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Número de Matrícula</th>
+                <th>Data de Nascimento</th>
+                <th>Setor</th>
+                <th>Cargo</th>
+                <th>Situação Vacinação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Nome</td>
+                <td>@Model.NumMatricula</td>
+                <td>@Model.DataNascimento.ToString("dd/MM/yyyy")</td>
+                <td>@Model.Setor</td>
+                <td>@Model.Cargo</td>
+                <td>
+                    @switch (Model.SituacaoVacinacao)
+                    {
+                        case ControleVacinas___MVC_ASP_NET.Enums.SituacaoVacinacaoEnum.VacinacaoCompleta:
+                            @:Vacinação completa
+                            break;
+                        case ControleVacinas___MVC_ASP_NET.Enums.SituacaoVacinacaoEnum.VacinacaoAusente:
+                            @:Vacinação ausente
+                            break;
+                        case ControleVacinas___MVC_ASP_NET.Enums.SituacaoVacinacaoEnum.VacinacaoParcial:
+                            @:Vacinação parcial
+                            break;
+                        default:
+                            @:Situação desconhecida
+                            break;
+                    }
+                </td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+    </table>
+
+
+    <div class="d-flex">
+
+        <a class="btn btn-secondary btn-block  me-2" asp-controller="ListaDeCadastros" asp-action="Index" role="button">Cancelar exclusão</a>
+        @* <a class="btn btn-danger btn-block" asp-controller="ListaDeCadastros" asp-action="Apagar" asp-route-id="@Model.Id" role="button">Confirmar exclusão</a> *@
+
+        <form asp-controller="ListaDeCadastros" asp-action="PseudoApagarUsuarioPadrao" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="btn btn-danger btn-block">Confirmar exclusão</button>
+        </form>
+
+    </div>
+</div>
+
+
+

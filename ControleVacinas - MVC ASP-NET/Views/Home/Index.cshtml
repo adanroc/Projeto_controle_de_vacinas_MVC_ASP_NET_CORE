@@ -1,0 +1,79 @@
+﻿@model ListaDeUsuariosModel
+@{
+    ViewData["Title"] = "Página inicial";
+}
+
+<div class="Text-center">
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div id="alert-box" class="alert alert-danger custom-alert" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div id="alert-box" class="alert alert-success custom-alert" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+</div>
+
+<div class="titulo-home-container">
+    @* <div>Bem vindo, @ViewBag.NomeUsuario, ao </div> *@
+    <div>Sistema de Cadastro de Vacinação dos Servidores</div>
+</div>
+
+<div class="home-container">
+
+@*     <div style="padding: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); border-radius: 5px; width: 100%; text-align: center;">
+ *@        <div style="font-size: 18px; text-align: center;">
+            BALANÇO DOS SERVIDORES
+        </div>
+@*     </div>
+ *@
+    <!-- Linha abaixo do container, com o mesmo tamanho e cor da borda inferior -->
+    <div style="width: 100%; height: 1px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); margin-top: 10px;"></div> @* Cor preta background-color: #333333; *@
+
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+
+        <!-- Total de Servidores -->
+        <div style="padding: 10px;  background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); border-radius: 5px; width: 23%; text-align: center;">
+            Total de servidores
+            <div style="font-size: 18px; text-align: center;">
+                @ViewBag.totalServidoresCadastrados
+            </div>
+        </div>
+
+        <!-- Total de Servidores Vacinados Completos -->
+        <div style="padding: 10px;  background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); border-radius: 5px; width: 23%; text-align: center;">
+            Vacinados completamente
+            <div style="color: green; font-size: 18px; text-align: center;">                      
+                @ViewBag.totalVacinadosCompletamente
+            </div>
+        </div>
+
+        <!-- Total de Servidores Vacinados Incompletos -->
+        <div style="padding: 10px;  background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); border-radius: 5px; width: 23%; text-align: center;">
+            Vacinados parcialmente
+            <div style="color: darkorange; font-size: 18px; text-align: center;">
+                @ViewBag.totalVacinadosParcialmente
+            </div>
+        </div>
+
+        <!-- Total de Servidores Não Vacinados -->
+        <div style="padding: 10px;  background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); border-radius: 5px; width: 23%; text-align: center;">
+        Não vacinados
+            <div style="color: red; font-size: 18px; text-align: center;">
+                @ViewBag.totalNaoVacinados
+             </div>
+        </div>
+
+    </div>
+</div>
+
+
+

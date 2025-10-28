@@ -1,0 +1,55 @@
+﻿@using ControleVacinas___MVC_ASP_NET.Enums
+@model AlterarSenhaModel
+@{
+    ViewData["Title"] = "Alterar senha";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Alterar senha do usuário</h1>    
+</div>
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div id="alert-box" class="alert alert-success custom-alert" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div id="alert-box" class="alert alert-danger custom-alert custom-alert" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<br />
+
+<form asp-controller="AlterarSenha" asp-action="Alterar" method="post">
+
+    <div class="form-grup">
+        <label for="senhaAtual" class="form-label">Senha atual</label>
+        <input type="password" asp-for="SenhaAtual" class="form-control" placeholder="Digite a sua senha atual">
+        <div id="senhaAtual" class="form-text"> </div>
+        @Html.ValidationMessageFor(x => x.SenhaAtual)
+    </div>
+
+    <div class="form-grup">
+        <label for="novaSenha" class="form-label">Nova senha</label>
+        <input type="password" asp-for="NovaSenha" class="form-control" placeholder="Digite a nova senha que deseja">
+        <div id="novaSenha" class="form-text"> </div>
+        @Html.ValidationMessageFor(x => x.NovaSenha)
+    </div>
+
+    <div class="form-grup">
+        <label for="confirmarNovaSenha" class="form-label">Confirmar nova senha</label>
+        <input type="password" asp-for="ConfirmarNovaSenha" class="form-control" placeholder="Digite novamente a nova senha para confirmação">
+        <div id="confirmarNovaSenha" class="form-text"> </div>
+        @Html.ValidationMessageFor(x => x.ConfirmarNovaSenha)
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar senha</button>
+    <a class="btn btn-secondary btn-block" asp-controller="Home" asp-action="Index" role="button">Voltar</a>
+
+</form>

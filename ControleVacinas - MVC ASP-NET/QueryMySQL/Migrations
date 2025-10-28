@@ -1,0 +1,43 @@
+---Criar migração---
+
+add-migration NomeDaMigration -Context NomeDoContexto
+
+add-migration zero -Context BancoContext
+add-migration um -Context BancoContext
+add-migration dois -Context BancoContext
+add-migration tres -Context BancoContext
+add-migration quatro -Context BancoContext
+add-migration cinco -Context BancoContext
+add-migration seis -Context BancoContext
+add-migration sete -Context BancoContext
+add-migration oito -Context BancoContext
+add-migration nove -Context BancoContext
+add-migration dez -Context BancoContext
+
+---Listar as migrations---
+Get-Migrations
+
+---Remover a ultima migração---
+Remove-Migration
+
+---Gerar script SQL das migrations (copiar e executar diretamente no banco de dados)---
+Script-Migration
+
+---Aplicar migração no Banco de Dados---
+update-database
+
+---Aplicar especificar qual contexto, caso tiver multiplos contextos---
+Update-Database -Context MyDbContext
+
+---Reverter a última migração---
+Update-Database [MigraçãoAnterior]
+
+---Apaga todas as migrações---
+update-database 0
+
+---TargetMigration: Especifica até qual migração deve ser aplicada. Se não for especificado, o banco de dados será atualizado para a última migração---
+Update-Database -TargetMigration MyMigration
+
+---Fornece informações detalhadas sobre a execução do comando
+[NomeDoComando] -Verbose
+Update-Database -Verbose

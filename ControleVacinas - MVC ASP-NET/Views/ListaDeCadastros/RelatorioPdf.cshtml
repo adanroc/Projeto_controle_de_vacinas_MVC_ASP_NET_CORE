@@ -1,0 +1,35 @@
+﻿@model List<ListaDeCadastrosModel>
+@{
+    ViewData["Title"] = "Relatório de cadastros";
+}
+
+<div class="titulo-relatorio-pdf-container">
+    <div>RELATÓRIO DOS SERVIDORES VACINADOS</div>
+</div>
+
+<div class="relatorio-pdf-container">
+
+@*     <div>
+        <h3>Visualização do Relatório</h3>
+        @Html.Partial("_TabelaRelatorio", Model)
+    </div>
+ *@
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="ListaDeCadastros" asp-action="GerarRelatorio">
+            Salvar PDF (salvo no servirdor)
+        </a>
+
+        <a class="btn btn-primary" role="button" asp-controller="ListaDeCadastros" asp-action="VisualizarRelatorio">
+            Vizualizar Relatório (salvo no pc do usuario)
+        </a>
+
+        @* <button type="submit" class="btn btn-primary btn-block">Salvar pdf</button> *@
+        <a class="btn btn-secondary btn-block" asp-controller="ListaDeCadastros" asp-action="Index" role="button">
+            Voltar
+        </a>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,1164 @@
+
+/**************************** Pagina html *****************************/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+/* -------------- Cabe�alho Geral-------------- */
+/*header {
+    font-size: 13px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 33px;*/ /* Define uma altura fixa para o cabe�alho */
+    /*padding: 0;*/ /* Remove qualquer padding extra */
+    /*width: 100%;
+    z-index: 1050;*/ /* Um valor maior que o do rodap� */
+    /*background-color: white;*/ /* Cor branca evita que o cabe�alho fique transparente */
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}*/
+
+/*Alterar altura do cabe�alho */
+/*.navbar {
+    padding-top: 0px;*/ /* Reduz o padding superior do cabe�alho */
+    /*padding-bottom: 0px;*/ /* Reduz o padding inferior do cabe�alho */
+/*}*/
+
+/*Alterar a cor branca da classe do bootstrap do cabe�alho*/
+/*.navbar-light.bg-white {
+    background-color: #1E3A5F !important;*/ /* Um azul mais escuro */
+/*}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+    color: #ffffff !important;*/ /* Torna o texto branco */
+/*}*/
+
+/*----------------------- Cabe�alho Somente Login ---------------------------------*/
+
+/* Estiliza��o do cabe�alho */
+#CabecalhoLogin {
+    padding: 0 !important;
+    margin: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100%;
+    background-color: #1E3A5F !important;
+    /*background-color: white;*/
+    z-index: 10;
+    border-bottom: 1px solid #d3d3d3; /* Linha de divis�o cinza claro */
+}
+
+/* Barra de navega��o */
+#CabecalhoLogin .navbar {
+        margin: 0;
+        padding: 0 10px;
+        display: flex;
+        align-items: center; /* Garante o alinhamento vertical */
+        height: 60px; /* Ajusta o tamanho da barra */
+}
+
+/* Container para imagem e texto */
+#CabecalhoLogin .ConteudoCabecalhoLogin {
+        display: flex;
+        align-items: center; /* Alinhamento vertical */
+        gap: 15px; /* Espa�o entre imagem e texto */
+        justify-content: flex-start; /* Alinha o conte�do � esquerda */
+}
+
+/* Estiliza��o da imagem */
+#CabecalhoLogin .ImagemCabecalhoLogin img {
+        height: 40px; /* Reduz a altura da imagem para caber no cabe�alho */
+        width: auto; /* Mant�m a propor��o */
+}
+
+/* Texto do cabe�alho */
+#CabecalhoLogin .TextoCabecalhoLogin {
+        font-size: 18px; /* Ajuste o tamanho do texto */
+        font-weight: bold;
+        /*color: #1E3A5F;*/
+        color: #ffffff !important;
+        white-space: nowrap; /* Evita quebra de linha */
+}
+
+/*----------------------- Cabe�alho Logado ---------------------------------*/
+
+#CabecalhoLogado {
+    font-size: 13px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 33px; /* Define uma altura fixa para o cabe�alho */
+    padding: 0; /* Remove qualquer padding extra */
+    width: 100%;
+    z-index: 1050; /* Um valor maior que o do rodap� */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+    /* Alterar altura do cabe�alho */
+    #CabecalhoLogado .navbar {
+        padding-top: 0px; /* Reduz o padding superior do cabe�alho */
+        padding-bottom: 0px; /* Reduz o padding inferior do cabe�alho */
+    }
+
+    /* Alterar a cor branca da classe do bootstrap do cabe�alho */
+    #CabecalhoLogado .navbar-light.bg-white {
+        background-color: #1E3A5F !important; /* Um azul mais escuro */
+    }
+
+    #CabecalhoLogado .custom-navbar .nav-link,
+    #CabecalhoLogado .custom-navbar .navbar-brand {
+        color: #ffffff !important; /* Torna o texto branco */
+    }
+
+/* -------------- Rodap� -------------- */
+
+footer {
+    /*position: absolute;*/
+    position: fixed;
+    padding-top: 0px; /* Altera na altura da borda superior */
+    padding-bottom: 0px;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    margin: 0px !important; /* Remove margens adicionais */
+    /*background-color: white;*/ /* Cor branca evita que o cabe�alho fique transparente */
+    background-color: #1E3A5F;
+    /*background-color: #F1C232;*/ /*Cor: Gold*/
+    /*#F7E14A;*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    height: 33px; /* Define uma altura fixa para o cabe�alho */
+}
+
+    footer p {
+        margin: 0px !important;
+        padding-top: 3px; /* Altera na altura da borda superior */
+        padding-bottom: 1px;
+        line-height: 0.9!important; /* Ajusta o espa�amento entre linhas */
+        font-size: 12px;
+        color: #fff;
+    }
+
+/* -------------- Corpo -------------- */
+
+body {
+    padding-top: 33px; /* Espa�o reservado para o cabe�alho */ /* Ajuste o valor conforme a altura do cabe�alho */
+    padding-bottom: 33px; /* Espa�o reservado para o rodap� */
+    margin: 0px; /* Remove qualquer margem externa */
+    height: 100%; /* Garante que o conte�do ocupe o restante da altura da tela */
+}
+
+/**************************** Outros *****************************/
+
+@media (min-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/*-------Espa�amento entre o �cone do Bootstrap e o Texto do nome do cabe�alho-------*/
+
+.icon-spacing {
+    margin-right: 5px; /* Ajuste o valor conforme necess�rio */
+}
+
+/* -------------- Placeholder dos campos de input e tipo data -------------- */
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.2); /* Define uma cor mais clara (menos opaca) */
+}
+
+/* Estilizar o texto dentro do campo date */
+input[type="date"] {
+    color: rgba(0, 0, 0, 0.3); /* Define a cor do texto no campo */
+}
+
+/* -------------- Mensagem de erro de valida��o -------------- */
+
+.field-validation-error {
+    color: #e01d1d !important;
+}
+
+/* -------------- Caixa de Alerta - Sucesso ou Erro -------------- */
+
+/* Mensagem centralizada abaixo do cabe�alho */
+.custom-alert {
+    position: fixed; /* Sobrep�e outros elementos */
+    top: 70px; /* Dist�ncia abaixo do cabe�alho */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    z-index: 1050; /* Sobrep�e todos os elementos */
+    max-width: 100%; /* Tamanho m�ximo da mensagem */
+    padding: 20px;
+    border-radius: 8px; /* Bordas arredondadas para um formato quase quadrado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex; /* Alinha os itens horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espa�o entre o bot�o e o texto */
+}
+
+/* Bot�o de fechar */
+.close-alert {
+    position: absolute; /* Posiciona em rela��o ao container pai (.custom-alert) */
+    right: 5px; /* Dist�ncia da borda direita */
+    top: 0px; /* Dist�ncia da borda superior */
+    font-weight: bold;
+    transform: translate(30%, -30%); /* Centraliza o �cone em rela��o � borda superior direita */
+    background: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+    /*border: 1px solid #000 !important;*/
+}
+
+/* Ajusta opacidade ao clicar fora */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/*.close-alert {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    height: 30px;
+}*/
+
+/* -------------- Campo <legend> -------------- */
+
+legend {
+    color: #2980B9; /* Define a cor azul */
+    font-weight: bold; /* Define o texto em negrito */
+    font-size: 1.5em; /* (Opcional) Aumenta o tamanho do texto */
+}
+
+/* -------------- Placeholder dos campos de input e tipo data -------------- */
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.2); /* Define uma cor mais clara (menos opaca) */
+}
+
+/* Estilizar o texto dentro do campo date */
+/*input[type="date"] {
+    color: rgba(0, 0, 0, 0.3);*/ /* Define a cor do texto no campo */
+/*}*/
+
+/* Comportamento din�mico do PlaceHolder padr�o do tipo Date: cinza antes de ter dados, cor normal de pois de ter dados*/
+
+input[type="date"]::placeholder {
+    color: lightgray; /* Define a cor do texto de placeholder */
+}
+
+input[type="date"].placeholder-active {
+    color: lightgray; /* Cor do texto enquanto o campo est� vazio */
+}
+
+input[type="date"] {
+    color: black; /* Cor do texto normal ap�s preenchido */
+}
+
+/* Quando o campo estiver em foco (clique), o texto fica preto */
+input[type="date"]:focus {
+        color: black; /* Texto preto quando o campo recebe o foco */
+}
+
+/* -------------- Legenda ao Passar o Mouse -------------- */
+.custom-tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none;
+    transition: opacity 0.01s ease-out;
+    opacity: 0;
+}
+
+/**************************** PASTA: LOGIN *****************************/
+
+
+
+/* -------------- Tela de login -------------- */
+
+/* Cont�iner pai para centralizar ambos os cont�ineres */
+.center-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title-container {
+    background-color: #2980B9; /* Azul escuro */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    width: 400px; /* Ajuste a largura conforme necess�rio */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    /* Texto */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    text-align: center;
+}
+
+    .title-container div {
+        font-size: 1.2rem;
+        margin: 4px 0;
+    }
+
+.login-container {
+    width: 400px; /* Largura do cont�iner */
+    background-color: #f0f0f0; /* Cor de fundo */
+    border: 1px solid #ddd; /* Borda */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Adiciona um espa�amento entre os cont�ineres */
+}
+
+
+
+/* -------------- Tela de login -------------- */
+
+/*.title-container {
+    background-color: #2980B9;*/ /* Azul escuro */
+    /*color: #fff;*/ /* Texto branco */
+    /*padding: 10px;
+    width: 400px;*/ /* Ajuste a largura conforme necess�rio */
+    /*margin: 0 auto;*/ /* Centraliza horizontalmente */
+    /*border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);*/ /* Sombra */
+
+    /* Texto */    
+    /*display: flex;
+    flex-direction: column;*/ /* Organiza os elementos em uma coluna */
+    /*text-align: center;
+}
+
+.title-container div {
+    font-size: 1.2rem;
+    margin: 4px 0;
+}
+
+.login-container {
+    width: 400px;*/ /* Largura do cont�iner */
+    /*background-color: #f0f0f0;*/ /* Cor de fundo */
+    /*border: 1px solid #ddd;*/ /* Borda */
+    /*padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);*/ /* Sombra */
+    /*margin: 0 auto;*/ /* Centraliza horizontalmente */
+    /*margin-top: 10px;*/ /* Adiciona um espa�amento entre os cont�ineres */
+/*}*/
+
+/* -------------- Tela de redefini��o de senha -------------- */
+
+.titulo-redefinir-senha-container {
+    background-color: #2980B9; /* Azul um pouco mais claro */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    width: 100%; /* Ajusta � largura total do cont�iner pai */
+    margin: 5px 0; /* Espa�amento vertical */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    /* Centraliza texto e mant�m estilo similar */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.titulo-redefinir-senha-container div {
+        font-size: 1.8rem; /* Aumenta levemente o tamanho da fonte */
+        /*font-weight: bold;*/ /* Adiciona destaque */
+        margin: 5px 0; /* Espa�amento interno */
+}
+
+.redefinir-senha-container {
+    width: 100%;
+    background-color: #f0f0f0; /* Fundo claro */
+    border: 1px solid #ddd; /* Borda discreta */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */  
+    margin-top: 10px; /* Espa�amento superior */
+    /*max-width: 600px;*/ /* Limita a largura m�xima do formul�rio */
+}
+
+.redefinir-senha-container div {
+    font-size: 1.2rem; /* Aumenta levemente o tamanho da fonte */
+    /*font-weight: bold;*/ /* Adiciona destaque */
+    margin: 10px 0; /* Espa�amento interno */
+    text-align: left;
+}
+
+/**************************** PASTA: ALTERAR SENHA *****************************/
+
+/* -------------- Tela index de alterar senha -------------- */
+
+/**************************** PASTA: HOME *****************************/
+
+
+/* -------------- Tela index da home -------------- */
+
+.titulo-home-container {
+    background-color: #2980B9; /* Azul um pouco mais claro */ /*Branco #ffffff;*/
+    padding: 10px;
+    width: 100%; /* Ajusta � largura total do cont�iner pai */
+    margin: 5px 0; /* Espa�amento vertical */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    border: 1px solid #ddd; /* Se n�o tiver esse par�metro a borda fica somente real�ada pela sombra */
+    /* Centraliza texto e mant�m estilo similar */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+    .titulo-home-container div {
+        font-size: 1.8rem; /* Aumenta levemente o tamanho da fonte */
+        /*font-weight: bold;*/ /* Adiciona destaque */
+        margin: 5px 0; /* Espa�amento interno */
+        line-height: 1.5 !important; /* Ajusta o espa�amento entre linhas */
+        color: #fff; /* Texto branco */
+    }
+
+.home-container {
+    width: 100%;
+    background-color: #f0f0f0; /* Fundo claro */
+    border: 1px solid #ddd; /* Borda discreta */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espa�amento superior */
+    /*max-width: 600px;*/ /* Limita a largura m�xima do formul�rio */
+    text-align: left;
+}
+
+.home-container div {
+        font-size: 1.5rem; /* Aumenta levemente o tamanho da fonte */
+        /*font-weight: bold;*/ /* Adiciona destaque */
+        margin: 10px 0; /* Espa�amento interno */
+        text-align: center;
+}
+
+/**************************** PASTA: LISTA DE CADASTRO *****************************/
+
+/* -------------- Tela de cadastro do servidor -------------- */
+
+.titulo-cadastro-container {
+    background-color: #2980B9; /* Azul um pouco mais claro */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    width: 100%; /* Ajusta � largura total do cont�iner pai */
+    margin: 5px 0; /* Espa�amento vertical */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    /* Centraliza texto e mant�m estilo similar */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo-cadastro-container div {
+        font-size: 1.3rem; /* Aumenta levemente o tamanho da fonte */
+        /*font-weight: bold;*/ /* Adiciona destaque */
+        margin: 5px 0; /* Espa�amento interno */
+}
+
+.cadastro-servidor-container {
+    width: 100%;
+    background-color: #f0f0f0; /* Fundo claro */
+    border: 1px solid #ddd; /* Borda discreta */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espa�amento superior */
+    /*max-width: 600px;*/ /* Limita a largura m�xima do formul�rio */
+}
+
+/* -------------- Tela editar cadastro do servidor -------------- */
+
+.titulo-editar-cadastro-container {
+    background-color: #2980B9; /* Azul um pouco mais claro */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    width: 100%; /* Ajusta � largura total do cont�iner pai */
+    margin: 5px 0; /* Espa�amento vertical */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    /* Centraliza texto e mant�m estilo similar */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo-editar-cadastro-container div {
+    font-size: 1.3rem; /* Aumenta levemente o tamanho da fonte */
+    /*font-weight: bold;*/ /* Adiciona destaque */
+    margin: 5px 0; /* Espa�amento interno */
+}
+
+.editar-cadastro-container {
+    width: 100%;
+    background-color: #f0f0f0; /* Fundo claro */
+    border: 1px solid #ddd; /* Borda discreta */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espa�amento superior */
+    /*max-width: 600px;*/ /* Limita a largura m�xima do formul�rio */
+}
+
+/* -------------- Tela apagar confirma��o cadastro do servidor -------------- */
+
+.titulo-apagar-confirmacao-container {
+    background-color: #2980B9; /* Azul um pouco mais claro */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    width: 100%; /* Ajusta � largura total do cont�iner pai */
+    margin: 5px 0; /* Espa�amento vertical */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    /* Centraliza texto e mant�m estilo similar */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo-apagar-confirmacao-container div {
+        font-size: 1.3rem; /* Aumenta levemente o tamanho da fonte */
+        /*font-weight: bold;*/ /* Adiciona destaque */
+        margin: 5px 0; /* Espa�amento interno */
+}
+
+.editar-apagar-confirmacao-container {
+    width: 100%;
+    background-color: #f0f0f0; /* Fundo claro */
+    border: 1px solid #ddd; /* Borda discreta */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espa�amento superior */
+    /*max-width: 600px;*/ /* Limita a largura m�xima do formul�rio */
+}
+
+.editar-apagar-confirmacao-container div {
+        font-size: 1.5rem; /* Aumenta levemente o tamanho da fonte */
+        /*font-weight: bold;*/ /* Adiciona destaque */
+        margin: 10px 0; /* Espa�amento interno */
+        text-align: center;
+}
+
+/* -------------- Tela Relatorio Pdf do servidor -------------- */
+
+.titulo-relatorio-pdf-container {
+    background-color: #2980B9; /* Azul um pouco mais claro */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    width: 100%; /* Ajusta � largura total do cont�iner pai */
+    margin: 5px 0; /* Espa�amento vertical */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    /* Centraliza texto e mant�m estilo similar */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.titulo-relatorio-pdf-container div {
+        font-size: 1.3rem; /* Aumenta levemente o tamanho da fonte */
+        /*font-weight: bold;*/ /* Adiciona destaque */
+        margin: 5px 0; /* Espa�amento interno */
+}
+
+.relatorio-pdf-container {
+    width: 100%;
+    background-color: #f0f0f0; /* Fundo claro */
+    border: 1px solid #ddd; /* Borda discreta */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espa�amento superior */
+    /*max-width: 600px;*/ /* Limita a largura m�xima do formul�rio */
+}
+
+/* -------------- P�gina index lista de cadastro do servidor -------------- */
+
+/* ----- Conteiner do t�tulo (e bot�es) -----*/
+
+/* Estilo do t�tulo */
+.titulo-index-cadastro-container {
+    background-color: #2980B9; /* Azul claro */
+    color: #fff; /* Texto branco */
+    padding: 10px;
+    display: flex;
+    justify-content: center; 
+    position: relative;
+    /*justify-content: space-between;*/ /* T�tulo � esquerda e bot�es � direita */
+    align-items: center; /* Centraliza verticalmente */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra discreta */
+    margin-bottom: 5px; /* Espa�amento inferior */
+    margin-top: 5px; /* Espa�amento superior */
+}
+
+/* T�tulo alinhado � esquerda */
+.titulo-index-cadastro-container div:first-child {
+        font-size: 1.5rem; /* Tamanho maior */
+        text-align: center;
+        font-weight: bold;
+}
+
+/* ----- Bot�es (dentro do Conteiner) -----*/
+
+/* Cont�iner dos bot�es */
+.botoes-index-cadastro-container {
+    display: flex;
+    gap: 5px; /* Espa�o entre os bot�es */
+
+    position: absolute; /* Para alinhamento dentro do cont�iner */
+    right: 10px; /* Ajusta os bot�es para o lado direito */
+}
+
+/* Estilo geral dos bot�es */
+.botoes-index-cadastro-container .btn {
+        display: flex;
+        align-items: center; /* Centraliza verticalmente o �cone e o texto */
+        gap: 5px; /* Espa�amento entre o �cone e o texto */
+        padding: 4px 10px; /* Ajuste de espa�amento interno para bot�es */
+        font-size: 12px; /* Ajuste do tamanho do texto */
+}
+
+/* Estilo dos bot�es */
+.botoes-index-cadastro-container .btn-primary {
+        background-color: #0056b3; /* Azul escuro para contraste */
+        border-color: #0056b3;
+}
+
+.botoes-index-cadastro-container .btn-primary:hover {
+            background-color: #003f7f; /* Azul ainda mais escuro no hover */
+            border-color: #003f7f;
+}
+
+.botoes-index-cadastro-container .btn-success {
+        background-color: #28a745; /* Verde padr�o */
+        border-color: #28a745;
+}
+
+.botoes-index-cadastro-container .btn-success:hover {
+            background-color: #218838; /* Verde mais escuro no hover */
+            border-color: #218838;
+}
+
+/* ----- Conteiner dos balan�os dos servidores -----*/
+
+.balanco-servidores-container {
+    width: 100%; /* Largura do cont�iner */
+    background-color: #f0f0f0; /* Cor de fundo */
+    border: 1px solid #ddd; /* Borda */
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-top: 5px; /* Adiciona um espa�amento entre os cont�ineres */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Estilo para o t�tulo */
+.titulo-balanco-servidores-container {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 0px; /* Espa�amento abaixo do t�tulo */
+}
+
+/* Estilo para o cont�iner dos balan�os */
+.conteudo-balanco-servidores-container {
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Alinha ao centro */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    gap: 15px; /* Espa�amento entre os itens */
+    margin-bottom: 0px; /* Espa�amento abaixo do t�tulo */
+}
+
+/* Estilo para cada balan�o */
+.balanco-item {
+    display: flex;
+    flex-direction: column; /* Organiza t�tulo e n�mero verticalmente */
+    align-items: center; /* Centraliza os itens */
+    font-size: 1.2rem; /* Tamanho do texto */
+    font-weight: 450; /* Peso da fonte */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilo para o n�mero */
+.balanco-numero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Largura do quadrado */
+    height: 30px; /* Altura do quadrado */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    color: #fff; /* Cor do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Cores para cada balan�o */
+.total-servidores {
+    /*background-color: #007bff;*/ /* Azul */
+    background-color: #949695; /* Cinza */
+}
+
+.vacinados-completamente {
+    background-color: #28a745; /* Verde */
+}
+
+.vacinados-parcialmente {
+    background-color: #ffc107; /* Amarelo */
+}
+
+.nao-vacinados {
+    background-color: #dc3545; /* Vermelho */
+}
+
+/* -------------- T�tulo do Conteiner do filtro do per�odo de data  -------------- */
+
+.titulo-filtro-cadastros-container {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 0px; /* Espa�amento abaixo do t�tulo */
+}
+
+/* -------------- Conteiner do filtro do per�odo de data  -------------- */
+
+.filtro-cadastro-container {
+    width: 100%;
+    background-color: #f0f0f0; /* Fundo claro */
+    border: 1px solid #ddd; /* Borda discreta */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    /*margin: 0 auto;*/ /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espa�amento superior */
+    margin-left: 5px !important; /* Alinha � esquerda */
+    /*max-width: 600px;*/ /* Limita a largura m�xima do formul�rio */
+    /*margin-left: 0 !important;*/ /* Remover margem esquerda */
+    /*margin-right: 0 !important;*/ /* Remover margem direita */
+}
+
+.container-fluid-personalizado {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important; /* Remover margem esquerda */
+    margin-right: 0 !important; /* Remover margem direita */
+}
+
+/*Ajustar espa�amento entre as colunas (n�o precisa,mas � bom deixar pronto) */
+/*.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));*/
+ /* Colunas ajust�veis */
+/*gap: 15px;*/ /* Ajuste o espa�amento entre as colunas */
+/*}*/
+/* -------------- Subcontainer de filtro do per�odo de data  -------------- */
+/*.periodo-data-container {
+    border: 1px solid #ddd;*/ /* Borda discreta */
+/*padding: 0px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);*/ /* Sombra */
+/*margin: 0 auto;*/ /* Centraliza horizontalmente */
+/*margin-top: 0px;*/ /* Espa�amento superior */
+/*}*/
+
+
+/* ----- Continer da tabela -----*/
+.tabela-ListaDeCadastros-container {
+    width: 100%; /* Ocupar a largura total do cont�iner pai */
+    background-color: #ffffff; /* Fundo branco para destaque */
+    border: 1px solid #ccc; /* Borda suave */
+    border-radius: 5px; /* Cantos arredondados */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/ /* Sombra leve */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra discreta */
+    /*margin: 15px 0;*/ /* Espa�amento vertical */
+    overflow: hidden; /* Evita que a barra de rolagem apare�a no cont�iner */
+    /*margin-bottom: 0px !important;*/ /* Espa�amento inferior */
+    /*margin-top: 10px;*/ /* Espa�amento superior */
+    /*padding: 4px;*/ /* Espa�amento interno */
+    padding-top: 0px; /* Espa�amento no topo */
+    padding-bottom: 0px !important; /* Espa�amento no fundo */
+    padding-right: 10px; /* Espa�amento � direita */
+    padding-left: 10px; /* Espa�amento � esquerda */
+    margin-bottom: 0px !important; /* Espa�amento inferior */
+    margin-top: 10px; /* Espa�amento superior */
+    /* Sem conteiner de balan�o dos servidores */
+    /*height: calc(100vh - 33px - 33px - 73px);*/ /* Calcula o espa�o restante */
+    /* Com conteiner de balan�o dos servidores */
+    height: calc(100vh - 33px - 33px - 160px); /*166px*/ /* Calcula o espa�o restante */
+    /*display: flex;*/ /* Garante o alinhamento flex�vel */
+    /*flex-direction: column;*/ /* Orienta o conte�do verticalmente */
+}
+
+/* ----- Tabela -----*/
+
+#TabelaListaDeCadastros {
+    display: block !important; /* Permite que a tabela tenha rolagem */
+    width: 100%; /* A tabela ocupa 100% da largura do cont�iner pai */
+    /* Sem conteiner de balan�o dos servidores */
+    max-height: calc(100vh - 33px - 33px - 166px - 60px); /* Calcula o espa�o restante */
+    /* Com conteiner de balan�o dos servidores */
+
+    overflow: auto; /* Barra de rolagem autom�tica para a tabela */
+    table-layout: fixed; /* Ajusta as colunas automaticamente para suportar a rolagem */
+    /*margin: 0;*/ /* Remove margens internas */
+    margin-top: 0px; /* Espa�amento entre o t�tulo e a tabela */
+    margin-bottom: 0px !important; /* Espa�amento inferior */
+
+    padding-top: 0px; /* Espa�amento no topo */
+    padding-bottom: 0px !important; /* Espa�amento no fundo */
+
+    border-collapse: separate !important;
+    border-spacing: 0px !important;
+    border: 0.2px solid #dee2e6 !important; /* Cor e espessura da borda */
+    border-radius: 0px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui a borda dentro das dimens�es da tabela */
+
+    vertical-align: middle !important; /* Centraliza o conte�do verticalmente */
+}
+
+/*----------Linha do campo de pesquisa e informa��es abaixo da tabela DatTabela Jquery----------*/
+
+/* Remover margens das divs do DataTables */
+.dt-layout-row {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajustes no campo de pesquisa */
+.dt-search {
+    margin-bottom: 0px; /* Espa�amento do campo de pesquisa */
+}
+
+/*----------Cabe�alho----------*/
+
+.tabela-ListaDeCadastros-container thead {
+    /*background-color: #6c757d;*/ /* Cor azul mais suave para o cabe�alho */
+    color: #ffffff; /* Cor do texto no cabe�alho em branco */
+    text-align: center !important; /* Alinha o texto � esquerda */
+    vertical-align: middle !important; /* Centraliza o conte�do verticalmente */
+    font-size: 11px !important; /* Define o tamanho da fonte, ajuste conforme necess�rio */
+}
+
+.tabela-ListaDeCadastros-container th {
+    /*border: 1px solid #bbbbbb !important;*/ /* Borda mais destacada nas c�lulas do cabe�alho com colspan */
+    border: 1px solid #dee2e6; /* Borda mais destacada nas c�lulas do cabe�alho */
+    text-align: center !important; /* Alinha o texto � esquerda */
+}
+
+/* Bordas destacadas nas colunas mescladas do cabe�alho */
+.tabela-ListaDeCadastros-container thead th[colspan] {
+    border: 1px solid #dee2e6; /* Borda mais destacada nas c�lulas do cabe�alho com colspan */
+    /*border: 1px solid #bbbbbb !important;*/ /* Borda mais destacada nas c�lulas do cabe�alho com colspan */
+    text-align: center !important; /* Alinha o texto � esquerda */
+}
+
+/* Cor da linha 1 do cabe�alho */
+#TabelaListaDeCadastros thead tr:nth-child(1) {
+    background-color: #43484b !important;
+}
+
+/* Cor da linha 2 do cabe�alho */
+#TabelaListaDeCadastros thead tr:nth-child(2) {
+    background-color: #6c757d !important;
+}
+
+/*----------Rodap�----------*/
+.tabela-ListaDeCadastros-container tfoot {
+    /*background-color: #6c757d;*/ /* Cor azul forte para o rodap� */
+    color: #ffffff; /* Cor do texto no rodap� em branco */
+}
+
+    .tabela-ListaDeCadastros-container tfoot th,
+    .tabela-ListaDeCadastros-container tfoot td {
+        border: 1px solid #dee2e6 !important; /* Borda mais destacada nas c�lulas do rodap� */
+        /*border: 1px solid #bbbbbb !important;*/ /* Borda mais destacada nas c�lulas do cabe�alho com colspan */
+        text-align: center !important; /* Alinha o texto � esquerda */
+        vertical-align: middle !important; /* Centraliza o conte�do verticalmente */
+        font-size: 11px !important;
+    }
+
+/* Cor da linha 1 do cabe�alho */
+#TabelaListaDeCadastros tfoot tr:nth-child(1) {
+    background-color: #6c757d !important;
+}
+
+/* Cor da linha 2 do cabe�alho */
+#TabelaListaDeCadastros tfoot tr:nth-child(2) {
+    background-color: #43484b !important;
+}
+
+/*----------Corpo----------*/
+
+/* Alinhar as c�lulas do corpo ao centro */
+.tabela-ListaDeCadastros-container tbody td {
+    text-align: center !important; /* Alinha horizontalmente o texto ao centro */
+ 
+}
+
+/* Reduz o espa�amento superior e inferior das c�lulas do cabe�alho, corpo e rodap�*/
+#TabelaListaDeCadastros thead th,
+#TabelaListaDeCadastros tbody td,
+#TabelaListaDeCadastros tfoot td {
+    padding-top: 1px !important; /* Espa�amento superior */
+    padding-bottom: 1px !important; /* Espa�amento inferior */
+
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+}
+
+/*----------Cabe�alho fixo para baixo----------*/
+
+#TabelaListaDeCadastros .table-header {
+    position: sticky !important;
+    top: 0 !important; /* Fixa o cabe�alho no topo */
+    z-index: 3 !important; /* Garante que o cabe�alho fique acima das c�lulas */
+    margin: 0px !important; /* Remove margens externas */
+    padding: 0px !important; /* Reduzir o padding de todas as c�lulas da tabela */
+    text-align: left; /* Alinha o texto ao centro */
+    border: 1px solid #dee2e6; /* Borda mais destacada nas c�lulas do rodap� */
+}
+
+/* Coluna fixa (Servidor ativo - mesclada) 8 c�lulas mescladas d*/
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(1) {
+    position: sticky !important;
+    left: 0 !important;*/ /* Alinha com a primeira coluna fixa */
+    /*width: 230px !important;*/ /* Soma das larguras de Matr�cula (80px) + Nome (150px) */
+    /*min-width: 230px !important;*/
+    /*z-index: 5 !important;*/ /* Garante que esteja acima das outras c�lulas */
+    /*background: #666E75;*/ /* Cor de fundo fixa */
+    /*color: #ffffff;*/ /* Cor do texto */
+    /*text-align: center;*/ /* Centraliza o texto */
+    /*border: 1px solid #dee2e6;*/ /* Adiciona borda para consist�ncia */
+    /*transition: width 0.3s ease;*/ /* Suaviza a transi��o ao alterar a largura */
+/*}*/
+
+/*----------Cabe�alho fixo para direita----------*/
+
+/* Coluna fixa (Servidor ativo - mesclada) 2 c�lulas mescladas*/
+#TabelaListaDeCadastros thead tr:first-child th:nth-child(2) {
+    position: sticky !important;
+    left: 0 !important; /* Alinha com a primeira coluna fixa */
+    /*width: 230px !important;*/ /* Soma das larguras de Matr�cula (80px) + Nome (150px) */
+    /*min-width: 230px !important;*/
+    z-index: 5 !important; /* Garante que esteja acima das outras c�lulas */
+    color: #ffffff; /* Cor do texto */
+    /*color: #000000 !important;*/ /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    border: 1px solid #dee2e6; /* Adiciona borda para consist�ncia */
+    /*background: #666E75;*/ /* Cor de fundo fixa (similar do resto n�o fixo, mas um pouco diferente para poder sobrepor)*/
+    background-color: #43484b !important;
+}
+
+#TabelaListaDeCadastros thead tr:first-child th:nth-child(1) {
+    border-right: none; /* Remove a borda direita */
+}
+
+#TabelaListaDeCadastros thead tr:first-child th:nth-child(3) {
+    border-left: none; /* Remove a borda esquerda */
+}
+
+/*----------Cabe�alho e Corpo fixo para direita----------*/
+
+/* Coluna fixa (Matr�cula) */
+#TabelaListaDeCadastros tbody td:nth-child(3),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(3) {
+    width: 80px;
+    min-width: 80px;
+    position: sticky !important;
+    left: 0 !important; /* Segunda coluna */ /* Largura da coluna ID */
+}
+
+/* Coluna fixa (Nome) */
+#TabelaListaDeCadastros tbody td:nth-child(4),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4) {
+    width: 150px;
+    min-width: 150px;
+    position: sticky !important;
+    left: 80px !important; /* Terceira coluna */ /* Largura das colunas ID e Matr�cula */
+}
+
+#TabelaListaDeCadastros tbody td:nth-child(3),
+#TabelaListaDeCadastros tbody td:nth-child(4) {
+    /*background: #FFFDF7;*/
+    background: #fefefe; /* Cor de fundo fixa (similar do resto n�o fixo, mas um pouco diferente para poder sobrepor)*/
+    /*background: #666E75;*/
+    /*color: #ffffff !important;*/
+    color: #000000 !important;
+}
+
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(3),
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4) {
+    z-index: 4; /* Certifica-se de que esteja acima das c�lulas regulares */
+    background: #6c757d; /* Cor de fundo fixa (similar do resto n�o fixo, mas um pouco diferente para poder sobrepor)*/
+    /*color: #000000 !important;*/ /* Cor do texto */
+    color: #ffffff !important;
+}
+
+/*----------Rodap� fixo para direita----------*/
+
+#TabelaListaDeCadastros tfoot tr:nth-child(1) td:nth-child(2),
+tfoot tr:nth-child(2) td:nth-child(2) {
+    position: sticky !important;
+    left: 0 !important; /* Alinha com a primeira coluna fixa */
+    z-index: 5 !important; /* Garante que esteja acima das outras c�lulas */
+    /*background: #666E75;*/ /* Cor de fundo fixa */
+    /*background: #6c757d !important;*/
+    color: #ffffff; /* Cor do texto */
+    /*color: #000000 !important;*/ /* Cor do texto */
+    font-weight: bold !important;
+    text-align: center; /* Centraliza o texto */
+    border: 1px solid #dee2e6; /* Adiciona borda para consist�ncia */
+}
+
+#TabelaListaDeCadastros tfoot tr:nth-child(1) td:nth-child(2) {
+    background-color: #6c757d !important;
+}
+
+#TabelaListaDeCadastros tfoot tr:nth-child(2) td:nth-child(2) {
+    background-color: #43484b !important;
+}
+
+/*----------Cor de sele��o----------*/
+
+/* Aplicar destaque �s linhas ao passar o mouse */
+.tabela-ListaDeCadastros-container tbody tr:hover {
+    background-color: #fffee1 !important; /* Cor de destaque */
+}
+
+/* Garantir que as colunas fixadas tamb�m tenham a mesma cor */
+.tabela-ListaDeCadastros-container tbody tr:hover td:nth-child(3),
+.tabela-ListaDeCadastros-container tbody tr:hover td:nth-child(4) {
+    background-color: #fffee1 !important; /* Cor ao passar o mouse nas colunas fixadas */
+}
+
+/*----------Espa�amento do lado direito do �cone de ordena��o da c�lula do cabe�alho do Jquery Datatable----------*/
+
+/* Ajuste do espa�amento lateral do �cone */
+#TabelaListaDeCadastros .dt-column-order {
+    all: unset; /* Remove todos os estilos herdados */
+    margin-right: 10px !important; /* Reduz o espa�o lateral direito */
+    display: inline-block !important; /* Garante que o �cone permane�a alinhado */
+    vertical-align: middle !important; /* Ajusta o alinhamento vertical, se necess�rio */
+    padding-right: 0px !important;    
+    /* Teste para verificar se est� funcionando*/
+    /*background-color: red !important;
+    border: 1px solid blue !important;*/
+}
+
+/*----------Largura para as colunas----------*/
+
+/* Cabe�alho 1� linha */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(1) {}*//* Servidor ativo */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(2) {}*//* Hepatite */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(3) {}*//* Anti-HBS */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(4) {}*//* Difteria e Tetano */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(5) {}*//* Tr�plice Viral */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(6) {}*//* Covid 19 */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(7) {}*//* Febre Amarela */
+/*#TabelaListaDeCadastros thead tr:first-child th:nth-child(8) {}*//* Influenza */
+
+/* Cabe�alho 2� linha */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(1) {min-width: 50px;}/* A��o (o valor m�nimo j� est� autom�tico de acordo)*/
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(2) {min-width: 40px;}/* # */
+/*#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(3) {width: 120px;}*//* Matr�cula (j� foi fixado anteriormente) */
+/*#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(4) {width: 200px;}*//* Nome (j� foi fixado anteriormente)*/
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(5) {min-width: 100px;}/* DT Nascimento */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(6) {min-width: 80px;}/* Setor (o valor m�nimo j� est� autom�tico de acordo)*/
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(7) {min-width: 120px;}/* Cargo */
+
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(8) {min-width: 90px;}/* Hepatite - DT 1�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(9) {min-width: 90px;}/* Hepatite - DT 2�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(10) {min-width: 90px;}/* Hepatite - DT 3�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(11) {min-width: 95px;}/* Hepatite - DT Refor�o */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(12) {min-width: 95px;}/* Anti-HBS - DT Exame */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(13) {min-width: 95px;}/* Anti-HBS - Resultado */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(14) {min-width: 90px;}/* Difteria - DT 1�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(15) {min-width: 90px;}/* Difteria - DT 2�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(16) {min-width: 90px;}/* Difteria - DT 3�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(17) {min-width: 95px;}/* Difteria - DT Refor�o */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(18) {min-width: 90px;}/* Tr�plice Viral - DT 1�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(19) {min-width: 90px;}/* Tr�plice Viral - DT 2�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(20) {min-width: 90px;}/* Covid - DT 1�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(21) {min-width: 90px;}/* Covid - DT 2�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(22) {min-width: 90px;}/* Covid - DT 3�Dose */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(23) {min-width: 100px;}/* Covid - DT 1�Refor�o */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(24) {min-width: 100px;}/* Covid - DT 2�Refor�o */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(25) {min-width: 103px;}/* Febre Amarela - DT Dose �nica */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(26) {min-width: 103px;}/* Influenza - DT Dose Anual */
+#TabelaListaDeCadastros thead tr:nth-child(2) th:nth-child(27) {min-width: 193px;}/* Situa��o Vacina��o */
+
+/* Aplica estilo para truncar texto com retic�ncias */
+#TabelaListaDeCadastros td {
+    max-width: 150px; /* Define a largura m�xima da c�lula */
+    white-space: nowrap; /* Impede que o texto quebre para a pr�xima linha */
+    overflow: hidden; /* Esconde o texto que ultrapassa a largura */
+    text-overflow: ellipsis; /* Adiciona as retic�ncias */
+    /*position: relative;*/ /* Necess�rio para o tooltip */ /*(Faz as colunas fixas ficarem transparentes durante a rolagem) */
+}
+
+/*.datatable-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    max-width: 300px;
+    white-space: normal;*/ /* Permite quebra de linha */
+/*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    z-index: 1000;
+}*/
+
+/* Estilo para o tooltip */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1000;
+    /*white-space: nowrap;*/ /*  N�o permite quebra de linha */
+    white-space: normal; /* Permite quebra de linha */
+    max-width: 300px; /* Define o limite m�ximo de largura */
+    word-wrap: break-word; /* Quebra palavras longas se necess�rio */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: auto; /* Permite intera��o do mouse */
+    user-select: text; /* Permite a sele��o de texto */
+}
+
+.subtitulo-vacinas {
+    /*color: orange;
+    */font-weight: bold;
+    font-size: 1rem;
+}

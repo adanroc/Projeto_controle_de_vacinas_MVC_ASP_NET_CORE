@@ -1,0 +1,75 @@
+﻿@using ControleVacinas___MVC_ASP_NET.Enums
+@model ListaDeUsuariosModel
+@{
+    ViewData["Title"] = "Criar cadastro usuário";
+}
+
+<div class="text-center">
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div id="alert-box" class="alert alert-success custom-alert" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div id="alert-box" class="alert alert-danger custom-alert" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Criar usuário</h1>
+    <p>Usuários</p>
+</div>
+
+<br />
+
+<form asp-controller="ListaDeUsuarios" asp-action="Cadastrar" method="post">
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Insira o nome do usuário">
+        <div id="nome" class="form-text"> </div>
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    <div class="form-group">
+        <label for="login" class="form-label">Login</label>
+        <input type="text" asp-for="Login" class="form-control" placeholder="Insira o login do usuário">
+        <div id="login" class="form-text"></div>
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+
+    <div class="form-group">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" asp-for="Senha" class="form-control" placeholder="Insira a senha do usuário">
+        <div id="senha" class="form-text"></div>
+        @Html.ValidationMessageFor(x => x.Senha)
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" asp-for="Email" class="form-control" placeholder="Insira o email do usuário">
+        <div id="email" class="form-text"></div>
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div class="form-group">   
+        <label for="perfil" class="form-label">Perfil</label>
+        <select asp-for="Perfil" class="form-control">
+            <option value="">Selecione</option>
+            <option value="@PerfilEnum.Admin">Administrador</option>
+            <option value="@PerfilEnum.Padrao">Padrão</option>
+        </select>
+        @Html.ValidationMessageFor(x => x.Perfil)
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Adicionar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="ListaDeUsuarios" asp-action="Index" role="button">Voltar</a>
+
+</form>

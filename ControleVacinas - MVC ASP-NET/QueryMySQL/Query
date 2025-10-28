@@ -1,0 +1,255 @@
+-- Criará um banco de dados chamado SisSASS
+CREATE DATABASE SisSASS; 
+
+-- Selecionar o banco de dados recém-criado para trabalhar nele
+USE SisSASS;
+
+-- Criar uma tabela simples de "Servidores" com campos 
+CREATE TABLE Servidores (
+	--Um identificador único para cada servidor, auto-incrementado
+	--IDENTITY(1,1): Isso significa que o campo id será incrementado automaticamente. O primeiro 1 define o valor inicial e o segundo 1 define o incremento (ou seja, o valor vai aumentar em 1 a cada novo registro).
+	--Geralmente ocorre quando a sintaxe para a criação de uma tabela no MySQL está sendo interpretada de forma incorreta, especialmente se você estiver tentando usar esse script em um banco de dados SQL Server (ou outro sistema de gerenciamento de banco de dados que não seja MySQL).
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+	--O nome do servidor, que não pode ser NULL
+    nome VARCHAR(100) NOT NULL,
+	 --O número da matrícula do servidor, que também não pode ser NULL
+    matricula VARCHAR(20) NOT NULL,
+	--O setor do servidor (pode ser NULL)
+    setor VARCHAR(50),
+	--A data de nascimento do servidor (do tipo DATE).
+    data_nascimento DATE
+);
+
+-- Inserir um registro (dados) na tabela 
+INSERT INTO Servidores (nome, matricula, setor, data_nascimento)
+VALUES ('João Silva', '123456', 'TI', '1980-05-15');
+
+--Verificar os Dados, use a consulta SELECT, Isso retornará todos os registros da tabela Servidores.
+SELECT * FROM Servidores;
+
+--Criar Índices (Opcional)
+--Esses comandos que você mencionou são usados para criar índices em colunas de uma tabela no banco de dados. Vamos explorar o que significa cada um deles e por que você usaria índices em suas tabelas.
+--O que é um Índice em Banco de Dados?
+--Um índice é uma estrutura de dados especial que melhora a velocidade das operações de consulta em uma tabela de banco de dados, como SELECT. Ele é semelhante a um índice de um livro, onde você pode localizar rapidamente um item (no caso do banco de dados, uma linha) sem precisar percorrer toda a tabela.
+--No banco de dados, os índices geralmente são criados em colunas que são frequentemente usadas nas cláusulas WHERE, JOIN, ORDER BY, ou para colunas que precisam ser únicas, como em uma chave primária.
+--Como funcionam os índices?
+--Quando você cria um índice em uma coluna, o banco de dados mantém uma estrutura de dados (geralmente uma árvore binária ou uma tabela ordenada) que armazena os valores dessa coluna junto com um ponteiro para a linha correspondente.
+--Isso significa que quando você executa uma consulta que envolve essa coluna indexada, o banco de dados pode procurar o valor muito mais rapidamente, sem precisar fazer uma varredura completa em todas as linhas da tabela.
+CREATE INDEX idx_matricula ON Servidores (matricula);
+CREATE INDEX idx_nome ON Servidores (nome);
+
+--Adicionar mais Tabelas (Opcional)
+--Se precisar de mais tabelas, você pode criar outras, como uma tabela de "Vacinas" associada aos servidores. Aqui está um exemplo de como criar uma tabela de "Vacinas" e associá-la ao servidor com uma chave estrangeira:
+--Isso cria uma tabela de "Vacinas" onde o campo servidor_id é uma chave estrangeira que referencia o id da tabela Servidores.
+CREATE TABLE Vacinas (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    tipo VARCHAR(100) NOT NULL,
+    data_aplicacao DATE,
+    servidor_id INT,
+    FOREIGN KEY (servidor_id) REFERENCES Servidores(id)
+);
+
+SELECT * FROM Vacinas;
+
+--Consultar Dados com Join (Opcional)
+--quiser listar as vacinas aplicadas aos servidores
+SELECT s.nome, v.tipo, v.data_aplicacao
+FROM Servidores s
+JOIN Vacinas v ON s.id = v.servidor_id;
+
+--Excluir Dados ou Tabelas (Opcional)
+--Para excluir um registro:
+DELETE FROM Servidores WHERE id = 1;
+--Para excluir uma tabela:
+DROP TABLE Servidores;
+--Para excluir o banco de dados:
+DROP DATABASE SisSASS;
+
+-- Criando 8 bancos de dados com 3 tabelas cada, com atributos e registros
+
+-- Banco 1
+CREATE DATABASE banco1;
+USE banco1;
+CREATE TABLE tabela1 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tabela2 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    descricao TEXT,
+    valor DECIMAL(10, 2)
+);
+--CREATE TABLE tabela3 (
+--    --id INT AUTO_INCREMENT PRIMARY KEY,
+--	id INT IDENTITY(1,1) PRIMARY KEY,
+--    status ENUM('ativo', 'inativo'),
+--    atualizado_em DATETIME
+--);
+
+--INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+--INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 10.50), ('Descricao2', 20.75), ('Descricao3', 30.00);
+--INSERT INTO tabela3 (status, atualizado_em) VALUES ('ativo', '2025-01-01 12:00:00'), ('inativo', '2025-01-02 14:00:00'), ('ativo', '2025-01-03 16:00:00');
+
+-- Criando a tabela de Status (substituindo ENUM)
+CREATE TABLE Status (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(10) NOT NULL
+);
+
+-- Inserir valores possíveis na tabela de Status
+INSERT INTO Status (nome) VALUES ('ativo'), ('inativo');
+
+-- Tabela 3
+CREATE TABLE tabela3 (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    status_id INT,  -- Referência à tabela Status
+    atualizado_em DATETIME,
+    FOREIGN KEY (status_id) REFERENCES Status(id)  -- Chave estrangeira para garantir que o status seja 'ativo' ou 'inativo'
+);
+
+-- Inserindo dados na tabela1
+INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+
+-- Inserindo dados na tabela2
+INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 10.50), ('Descricao2', 20.75), ('Descricao3', 30.00);
+
+-- Inserindo dados na tabela3 com referência à tabela Status
+-- 1 = 'ativo' e 2 = 'inativo'
+INSERT INTO tabela3 (status_id, atualizado_em) VALUES 
+    (1, '2025-01-01 12:00:00'),  -- 'ativo'
+    (2, '2025-01-02 14:00:00'),  -- 'inativo'
+    (1, '2025-01-03 16:00:00');  -- 'ativo'
+
+-- Banco 2
+CREATE DATABASE banco2;
+USE banco2;
+CREATE TABLE tabela1 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tabela2 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    descricao TEXT,
+    valor DECIMAL(10, 2)
+);
+-- Inserindo dados na tabela1
+INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+-- Inserindo dados na tabela2
+INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 15.00),('Descricao2', 25.50),('Descricao3', 35.75);
+
+-- Banco 3
+CREATE DATABASE banco3;
+USE banco3;
+CREATE TABLE tabela1 (
+        --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tabela2 (
+        --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    descricao TEXT,
+    valor DECIMAL(10, 2)
+);
+INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 12.25), ('Descricao2', 22.75), ('Descricao3', 32.50);
+
+
+-- Banco 4
+CREATE DATABASE banco4;
+USE banco4;
+CREATE TABLE tabela1 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tabela2 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    descricao TEXT,
+    valor DECIMAL(10, 2)
+);
+INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 18.00), ('Descricao2', 28.25), ('Descricao3', 38.75);
+
+-- Banco 5
+CREATE DATABASE banco5;
+USE banco5;
+CREATE TABLE tabela1 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tabela2 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    descricao TEXT,
+    valor DECIMAL(10, 2)
+);
+INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 13.75), ('Descricao2', 23.50), ('Descricao3', 33.25);
+
+-- Banco 6
+CREATE DATABASE banco6;
+USE banco6;
+CREATE TABLE tabela1 (
+    --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tabela2 (
+        --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    descricao TEXT,
+    valor DECIMAL(10, 2)
+);
+INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 11.00), ('Descricao2', 21.75), ('Descricao3', 31.50);
+
+-- Banco 7
+CREATE DATABASE banco7;
+USE banco7;
+CREATE TABLE tabela1 (
+        --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tabela2 (
+        --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    descricao TEXT,
+    valor DECIMAL(10, 2)
+);
+INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 19.50), ('Descricao2', 29.25), ('Descricao3', 39.00);
+
+-- Banco 8
+CREATE DATABASE banco8;
+USE banco8;
+CREATE TABLE tabela1 (
+        --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tabela2 (
+        --id INT AUTO_INCREMENT PRIMARY KEY,
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    descricao TEXT,
+    valor DECIMAL(10, 2)
+);
+INSERT INTO tabela1 (nome) VALUES ('Registro1'), ('Registro2'), ('Registro3');
+INSERT INTO tabela2 (descricao, valor) VALUES ('Descricao1', 14.50), ('Descricao2', 24.00), ('Descricao3', 34.25);

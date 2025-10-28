@@ -1,0 +1,196 @@
+﻿@model ListaDeCadastrosModel
+@{
+    ViewData["Title"] = "Editar cadastro";
+}
+
+<div class="text-center">
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div id="alert-box" class="alert alert-success custom-alert" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div id="alert-box" class="alert alert-danger custom-alert" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+</div>
+
+<div class="titulo-editar-cadastro-container">
+    <div>EDITAR CADASTRO</div>
+</div>
+
+<div class="editar-cadastro-container">
+
+<form asp-controller="ListaDeCadastros" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+
+        <legend>Dados do Servidor</legend>
+        <div class="row">
+            <div class="form-group col-auto">
+                <label for="NumMatricula">Número de Matrícula</label>
+                <input type="number" asp-for="NumMatricula" class="form-control" placeholder="Digite a matricula">
+                <div id="numeroMatricula" class="form-text">45637293</div>
+                @Html.ValidationMessageFor(x => x.NumMatricula)
+            </div>
+            <div class="form-group col-auto">
+                <label for="Nome">Nome</label>
+                <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome">
+                @Html.ValidationMessageFor(x => x.Nome)
+            </div>
+            <div class="form-group col-auto">
+                <label for="DataNascimento">Data de Nascimento</label>
+                <input type="date" asp-for="DataNascimento" class="form-control">
+                @Html.ValidationMessageFor(x => x.DataNascimento)
+            </div>
+            <div class="form-group col-auto">
+                <label for="Setor">Setor</label>
+                <input type="text" asp-for="Setor" class="form-control" placeholder="Digite o setor">
+                @Html.ValidationMessageFor(x => x.Setor)
+            </div>
+            <div class="form-group col-auto">
+                <label for="Cargo">Cargo</label>
+                <input type="text" asp-for="Cargo" class="form-control" placeholder="Digite o cargo">
+                @Html.ValidationMessageFor(x => x.Cargo)
+            </div>
+        </div>
+
+
+        <legend>Vacinação do servidor</legend>
+        <div class="row">
+
+            <div class="col-auto">
+
+                <p class="subtitulo-vacinas">HEPATITE B (HB)</p>
+                <div class="form-group col-auto">
+                    <label for="DataDose1HepatiteB">Data 1ªDose</label>
+                    <input type="date" asp-for="DataDose1HepatiteB" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDose2HepatiteB">Data 2ªDose</label>
+                    <input type="date" asp-for="DataDose2HepatiteB" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDose3HepatiteB">Data 3ªDose</label>
+                    <input type="date" asp-for="DataDose3HepatiteB" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDoseReforcoHepatiteB">Data Dose de Reforço</label>
+                    <input type="date" asp-for="DataDoseReforcoHepatiteB" class="form-control">
+                </div>
+
+            </div>
+
+            <div class="col-auto">
+
+                <p class="subtitulo-vacinas">EXAME ANTI-HBS</p>
+                <div class="form-group col-auto">
+                    <label for="DataExameAntiHBS">Data do Exame</label>
+                    <input type="date" asp-for="DataExameAntiHBS" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="ResultadoExameAntiHBS">Resultado</label>
+                    <input type="text" asp-for="ResultadoExameAntiHBS" class="form-control">
+                    <div id="ResultadoExameAntiHBS" class="form-text">Positivo/Negativo</div>
+                </div>
+
+            </div>
+
+            <div class="col-auto">
+
+                <p class="subtitulo-vacinas">DIFTERIA E TÉTANO (DT)</p>
+
+                <div class="form-group col-auto">
+                    <label for="DataDose1DifteriaTetano">Data 1ªDose</label>
+                    <input type="date" asp-for="DataDose1DifteriaTetano" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDose2DifteriaTetano">Data 2ªDose</label>
+                    <input type="date" asp-for="DataDose2DifteriaTetano" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDose3DifteriaTetano">Data 3ªDose</label>
+                    <input type="date" asp-for="DataDose3DifteriaTetano" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDoseReforcoDifteriaTetano">Data Dose de Reforço</label>
+                    <input type="date" asp-for="DataDoseReforcoDifteriaTetano" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-auto">
+
+                <p class="subtitulo-vacinas">TRÍPLICE VIRAL</p>
+
+                <div class="form-group col-auto">
+                    <label for="DataDose1TripliceViral">Data 1ªDose</label>
+                    <input type="date" asp-for="DataDose1TripliceViral" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDose2TripliceViral">Data 2ªDose</label>
+                    <input type="date" asp-for="DataDose2TripliceViral" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-auto">
+
+                <p class="subtitulo-vacinas">COVID-19</p>
+
+                <div class="form-group col-auto">
+                    <label for="DataDose1Covid">Data 1ªDose</label>
+                    <input type="date" asp-for="DataDose1Covid" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDose2Covid">Data 2ªDose</label>
+                    <input type="date" asp-for="DataDose2Covid" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDose3Covid">Data 3ªDose</label>
+                    <input type="date" asp-for="DataDose3Covid" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDoseReforco1Covid">Data 1ª Dose de Reforço</label>
+                    <input type="date" asp-for="DataDoseReforco1Covid" class="form-control">
+                </div>
+                <div class="form-group col-auto">
+                    <label for="DataDoseReforco1Covid">Data 2ª Dose de Reforço</label>
+                    <input type="date" asp-for="DataDoseReforco2Covid" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-auto">
+
+                <p class="subtitulo-vacinas">FEBRE AMARELA</p>
+
+                <div class="form-group col-auto">
+                    <label for="DataDoseUnicaFebreAmarela">Data Dose Única</label>
+                    <input type="date" asp-for="DataDoseUnicaFebreAmarela" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-auto">
+
+                <p class="subtitulo-vacinas">INFLUENZA</p>
+
+                <div class="form-group col-auto">
+                    <label for="DataDoseAnualInfluenza">Data Dose Anual</label>
+                    <input type="date" asp-for="DataDoseAnualInfluenza" class="form-control">
+                </div>
+
+            </div>
+
+        </div>
+
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-controller="ListaDeCadastros" asp-action="Index" role="button">Voltar</a>
+
+</form>
+
+</div>
