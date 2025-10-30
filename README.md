@@ -1,4 +1,4 @@
-# Sistema de controle de vacinas
+# Sistema de controle de vacinas (ASP NET CORE - MVC - C#)
 
 Para usá-lo crie um usuário adminitrador, no SQL Server Management Studio:
 
