@@ -1,6 +1,6 @@
 # Sistema de controle de vacinas
 
-Para usá-lo crie um usuário adminitrador:
+Para usá-lo crie um usuário adminitrador, no SQL Server Management Studio:
 
 INSERT INTO ListaDeUsuarios (Nome, Login, Senha, Email, Perfil, DataCadastro)
 VALUES
